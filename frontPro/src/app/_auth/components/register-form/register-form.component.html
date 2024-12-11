@@ -1,67 +1,91 @@
-<form class="max-w-sm mx-auto justify-items-center flex flex-col h-full" [formGroup]="form">
-  <div class="flex-grow flex flex-col justify-center">
-    <h1 class="text-3xl font-extrabold text-gray-900 tracking-widest text-center mb-5">Registro de usuario</h1>
-    <hr class="w-48 h-1 mx-auto border-0 rounded mb-5">
-
-    <!-- Role -->
-    <div class="mb-7">
-      <label for="role" class="mb-2 text-sm font-medium text-gray-900">Rol del usuario</label>
-
-      <input [class.is-invalid]="roleValidate" name="role" type="text" formControlName="role" id="role"
-        placeholder="Ingrese el Rol"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5" />
-      <small *ngIf="roleValidate" style="font-size:x-small;" class="text-red-500 font-medium">Ingrese un rol
-        válido.</small>
+<div class="max-w-sm mx-auto mt-10">
+  <div class="box">
+    <div class="flex justify-center mb-4">
+      <img src="https://i.ibb.co/q0SVKMQ/bibliotech-logo1.png" alt="Bibliotech Logo" class="w-24 h-24">
     </div>
+    <h2 class="text-3xl font-bold text-center mb-6">Registrarse</h2>
 
-    <!-- Nombre -->
-    <div class="mb-7">
-      <label for="name" class="mb-2 text-sm font-medium text-gray-900">Nombre del usuario</label>
+    <!-- Formulario de Registro -->
+    <form id="registerForm">
+      <!-- Campo RUT -->
+      <div class="mb-5">
+        <label for="rut" class="block mb-2 text-sm font-medium text-gray-900">RUT:</label>
+        <input type="text" id="rut" name="rut"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          required placeholder="Ingrese su RUT">
+      </div>
 
-      <input [class.is-invalid]="nameValidate" name="name" type="text" formControlName="name" id="name"
-        placeholder="Ingrese su nombre"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5" />
-      <small *ngIf="nameValidate" style="font-size:x-small;" class="text-red-500 font-medium">Ingrese un nombre válido</small>
-    </div>
+      <!-- Campo Nombre -->
+      <div class="mb-5">
+        <label for="name" class="block mb-2 text-sm font-medium text-gray-900">Nombre:</label>
+        <input type="text" id="name" name="name"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          required placeholder="Ingrese su nombre">
+      </div>
 
-    <!-- Correo -->
-    <div class="mb-5">
-      <label for="email" class="mb-2 text-sm font-medium text-gray-900">Correo</label>
-      <input [class.is-invalid]="emailValidate" type="email" id="email" formControlName="email"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5"
-        placeholder="Ingrese su correo electrónico" name="email" />
-      <small *ngIf="emailValidate" style="font-size:x-small;" class="text-red-500 font-medium">Ingrese un correo
-        válido.</small>
-    </div>
+      <!-- Campo Apellidos -->
+      <div class="mb-5">
+        <label for="lastname" class="block mb-2 text-sm font-medium text-gray-900">Apellidos:</label>
+        <input type="text" id="lastname" name="lastname"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          required placeholder="Ingrese sus apellidos">
+      </div>
 
-    <!-- Contraseña -->
-    <div class="mb-7">
-      <label for="password" class="mb-2 text-sm font-medium text-gray-900">Contraseña</label>
+      <!-- Campo Email -->
+      <div class="mb-5">
+        <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Correo Electrónico:</label>
+        <input type="email" id="email" name="email"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          required placeholder="Ingrese su correo">
+      </div>
 
-      <input [class.is-invalid]="passwordValidate" name="password" type="password" formControlName="password"
-        id="password" placeholder="Ingrese su contraseña"
-        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 w-full p-2.5" />
-      <small *ngIf="passwordValidate" style="font-size:x-small;" class="text-red-500 font-medium">Ingrese una contraseña
-        válida.</small>
-    </div>
+      <!-- Campo Teléfono -->
+      <div class="mb-5">
+        <label for="phone" class="block mb-2 text-sm font-medium text-gray-900">Teléfono:</label>
+        <input type="text" id="phone" name="phone"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-none focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+          required placeholder="Ingrese un número telefónico (+56)">
+      </div>
 
+      <!-- Botones -->
+      <div class="flex flex-col space-y-3">
+          <button type="button" class="btn text-white"
+          [style.backgroundColor]="buttonColor"
+          (mouseover)="changeButtonColor('#a67c55')" 
+          (mouseout)="changeButtonColor('#c19875')" 
+          (click)="openModal()">
+          Registrar
+        </button>
 
-    <!-- Errores -->
-    <div *ngFor="let error of errorMessage" class="bg-red-500 rounded-lg mb-5 flex justify-center">
-      <a *ngIf="error" class="text-white text-sm font-medium m-5">
-
-        {{ error }}
-
+        <a routerLink="/" class="btn text-white"
+        style="background-color: #618985"
+        (mouseover)="hoverBackButton = true" 
+        (mouseout)="hoverBackButton = false" 
+        [class.hover\:bg-gray-700]="hoverBackButton">
+        Volver
       </a>
-    </div>
-
-    <!-- Botones -->
-    <button type="button" (click)="register()"
-      class="text-white primarybutton font-semibold rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center mb-3">Registrar
-    </button>
-
-    <a (click)="goToLogin()"
-      class="secundarybutton font-semibold rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center text-red-600">Iniciar Sesión</a>
-
+      </div>
+    </form>
   </div>
-</form>
+</div>
+
+<!-- Modal de confirmación -->
+<div *ngIf="showModal" class="modal-bg">
+  <div class="modal">
+    <p>¿Estás seguro de que deseas registrarte?</p>
+    <div class="modal-buttons">
+      <button class="confirm-btn" (click)="confirmRegistration()">Confirmar</button>
+      <button class="cancel-btn" (click)="closeModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de éxito de registro -->
+<div *ngIf="showSuccessModal" class="modal-bg">
+  <div class="modal">
+    <p>Has sido registrado exitosamente</p>
+    <div class="modal-buttons">
+      <button class="confirm-btn" (click)="closeSuccessModal()">Aceptar</button>
+    </div>
+  </div>
+</div>
