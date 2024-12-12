@@ -1,44 +1,61 @@
-.login {
+.register-container {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #EF233C;
-  overflow: hidden;
+  background-color: #6a8a8a;
 }
 
-.form{
-  width: auto;
-  padding: 40px;
-  background-color: #fff;
-  border-radius: 12px;
+.register-form {
+  background-color: #a3c4c4;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
 }
 
-hr{
-  background-color: #D90429;
-  height: 5px;
+.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
 }
 
-.primarybutton{
-  background-color: #EF233C;
+h2 {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.btn-register {
+  background-color: #d4a373;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  margin-top: 10px;
 }
 
-.primarybutton:hover{
-  background-color: #a2001b;
-
-}
-
-.secundarybutton{
-  border: 2px solid;
-  border-color: #EF233C;
+.btn-back {
+  background-color: #6a8a8a;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  transition: all 0.2s ease;
+  margin-top: 10px;
 }
-
-.secundarybutton:hover{
-  background-color: #a2001b;
-  color: #fff;
-}
-
