@@ -8,7 +8,7 @@ import { ProductsComponent } from './_shared/page/products/products.component';
   standalone: true,
   imports: [RouterOutlet, HttpClientModule, ProductsComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'] // Cambiar a style**Urls**
 })
 export class AppComponent implements OnInit {
   title = 'FrontendAngularIS';
