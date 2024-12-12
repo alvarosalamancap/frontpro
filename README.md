@@ -18,7 +18,7 @@ Bibliotech es un proyecto desarrollado para la asignatura de Ingeniería de Soft
 Para instalar y ejecutar el proyecto localmente, sigue estos pasos:
 
 1. Clona el repositorio:
-   git clone https://github.com/alvarosalamancap/Frontend-Angular
+   git clone https://github.com/alvarosalamancap/frontpro
    
 2. Instala dependencia:
    npm install
