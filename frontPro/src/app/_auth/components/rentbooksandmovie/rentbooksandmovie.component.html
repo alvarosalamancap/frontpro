@@ -1,1 +1,49 @@
-<p>rentbooksandmovie works!</p>
+<div class="container">
+    <h1>Arriendo de Libros y Películas</h1>
+  
+    <!-- Búsqueda -->
+    <div class="search-section">
+      <label for="search-input">Buscar por título, autor/director o ISBN:</label>
+      <input id="search-input" type="text" placeholder="Ingrese término de búsqueda" />
+      <button class="btn search-btn">Buscar</button>
+    </div>
+  
+    <!-- Resultados de la Búsqueda -->
+    <div class="results-section">
+      <h2>Resultados de la Búsqueda</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Título</th>
+            <th>Autor/Director</th>
+            <th>Disponibilidad</th>
+            <th>Fecha de Publicación/Estreno</th>
+            <th>Reseñas</th>
+            <th>Acción</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Aquí van las filas dinámicas con los datos de los resultados -->
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Solicitar Arriendo -->
+    <div class="request-section">
+      <h2>Solicitar Arriendo</h2>
+      <label for="select-item">Seleccione un libro o película:</label>
+      <select id="select-item">
+        <option>Seleccione de los resultados...</option>
+        <!-- Aquí van las opciones dinámicas -->
+      </select>
+  
+      <label for="rental-days">Número de días de arriendo:</label>
+      <input id="rental-days" type="number" placeholder="Ingrese número de días" />
+  
+      <label for="total-cost">Costo total estimado:</label>
+      <input id="total-cost" type="text" readonly />
+  
+      <button class="btn confirm-btn">Confirmar Solicitud</button>
+    </div>
+  </div>
+  
