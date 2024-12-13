@@ -19,6 +19,7 @@ export class GeneralPageComponent implements OnInit{
 
   ngOnInit(): void{
     const user = this.LocalStorageService.getClientLogger();
+    
     if (user){
       this.user = user;
     } else {

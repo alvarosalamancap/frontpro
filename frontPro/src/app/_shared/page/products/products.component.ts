@@ -19,6 +19,11 @@ import { ProductsService } from '../../products.service';
 
     constructor(){}
 
+    login() {
+      console.log('Login button clicked');
+      // Aquí puedes implementar la lógica de navegación o cualquier otra acción
+    }
+
     ngOnInit(): void {
       this.productsService.getProducts().then((data: any) => {
         this.products = data.data;
