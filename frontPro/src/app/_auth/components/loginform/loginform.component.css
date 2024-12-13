@@ -5,30 +5,40 @@ body {
   height: 100vh;
   background-color: #5e7d7e;
   margin: 0;
+  font-family: Arial, sans-serif;
 }
+
 .login-container {
   background-color: #8aa6a7;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  width: 90%; 
+  max-width: 400px;
 }
+
 .login-container img {
   width: 100px;
   height: auto;
+  margin-bottom: 20px; 
 }
+
 .login-container h2 {
   margin: 20px 0;
   font-size: 24px;
   color: #333;
 }
+
 .login-container input {
   width: 100%;
   padding: 10px;
   margin: 10px 0;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-size: 16px;
 }
+
 .login-container button {
   width: 100%;
   padding: 10px;
@@ -39,16 +49,21 @@ body {
   color: white;
   font-size: 16px;
   cursor: pointer;
+  transition: background-color 0.3s ease-in-out; /* Añadido para efecto suave al hover */
 }
+
 .login-container button:hover {
   background-color: #166d6b;
 }
+
 .login-container a {
   display: block;
   margin-top: 10px;
   color: #1a8c8a;
   text-decoration: none;
+  font-size: 14px; /* Tamaño de fuente para enlaces */
 }
+
 .login-container a:hover {
   text-decoration: underline;
 }
