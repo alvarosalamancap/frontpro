@@ -1,33 +1,16 @@
-import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { Component, inject, OnInit } from '@angular/core';
-import { ProductsService } from '../../products.service';
+import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
-  selector: 'ola-products',
-  standalone: true,
-  imports: [CommonModule, HttpClientModule],
+  selector: 'app-products',
   templateUrl: './products.component.html',
-  styleUrl: './products.component.css',
-  providers: [ProductsService]
+  styleUrls: ['./products.component.css'],
 })
-  export class ProductsComponent implements OnInit {
+export class ProductsComponent {
+  constructor(private router: Router) {}
 
-
-    productsService = inject(ProductsService);
-    products: any = [];
-
-    constructor(){}
-
-    ngOnInit(): void {
-      this.productsService.getProducts().then((data: any) => {
-        this.products = data.data;
-      }
-      //Validar que la lista este vacia o haya algun error
-    );
-    }
-    
-
+  onLoginClick(): void {
+    // Redirigir a la página de login
+    this.router.navigate(['/login']);
+  }
 }
-
-  

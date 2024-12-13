@@ -4,5 +4,6 @@
   </div>
   <h1>Bienvenido a Bibliotech</h1>
   <div class="buttons-container">
-      <button class="btn" routerLink="/login.component">Iniciar Sesión</button>
-    <button class="btn">Regístrate</button>
+    <button (click)="onLoginClick()">Iniciar sesión</button>
+    <button class="btn" routerLink="/register">Regístrate</button>
+  </div>

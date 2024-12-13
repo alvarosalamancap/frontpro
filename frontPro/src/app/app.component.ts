@@ -1,29 +1,8 @@
-import { HttpClientModule } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
-import { ProductsComponent } from './_shared/page/products/products.component';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet, HttpClientModule, ProductsComponent],
+  selector: 'ola-products',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
-  title = 'FrontendAngularIS';
-
-  constructor(private Router:Router) { }
-
-  async ngOnInit(): Promise<void> {
-    if (typeof window !== 'undefined'){
-      const { initFlowbite } = await import('flowbite');
-      initFlowbite();
-    }
-  }
-
-  navigateToLogin(): void {
-    this.Router.navigate(['/login']);
-  }
-
-}
+export class AppComponent {}
